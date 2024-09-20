@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Table</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+
+    </tbody>
+  </table>
+
+  <script>
+    function addRowToTable(data) {
+      const tableBody = document.getElementById('myTable'); // Get the tbody element
+
+      
+      for (let i = 0; i < data.length; i++) {
+        const newRow = document.createElement('tr');
+        const cell = document.createElement('td');
+        cell.innerText = data[i];
+        newRow.appendChild(cell);
+      }
+
+      tableBody.appendChild(newRow);
+    }
+
+    const data = [
+      ["Data 1", "Data 2", "Data 3"],
+      ["Data 4", "Data 5", "Data 6"],
+      ["Data 7", "Data 8",]
+    ];
+
+    // Add multiple rows to the table
+    data.forEach(row => addRowToTable(row));
+    console.log(data[0])
+  </script>
+</body>
+</html>
