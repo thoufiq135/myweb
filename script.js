@@ -1,43 +1,35 @@
 // // ----------------------------------array square---------------------------------------
-// let arr1=[1,2,4,7,6];
-// let arra=[];
-// arr1.map((ele)=>{
-//     let sele=Math.pow(ele,2)
-//     arra.push(sele)
+let arr1=[1,2,4,7,6];
+let arra=[];
+arr1.map((ele)=>{
+    let sele=Math.pow(ele,2)
+    arra.push(sele)
 
-// })
-// console.log(`Squares of elements in ${arr1}`,arra);
+})
+console.log(`Squares of elements in ${arr1}`,arra);
 
 
 
 
 // // -------------------------------------grades of students--------------------------------
-// let students1=[
-//     {name:"suraj",marks:"90"},
-//     {name:"sravan",marks:"40"},
-//     {name:"nandan",marks:"70"},
-//     {name:"santhos",marks:"99"},
-//     {name:"thoufiq",marks:"0"}
-// ]
-// let grade=[];
-// students1.filter((ele1)=>{
-//     let mar = ele1.marks
-//     if(mar>80){
-//         grade.push(ele1.name   +"="+  "A")
-//     }else if(mar>70){
-//         grade.push(ele1.name   +"="+ "B")
-
-//     }else if(mar>60){
-//         grade.push(ele1.name   +"="+ "C")
-//     }else if(mar>50){
-//         grade.push(ele1.name   +"="+ "D")
-//     }else if(mar<50){
-//         grade.push(ele1.name   +"="+ "F")
-//     }
-
-
-// })
-// console.log(grade);
+let students1=[
+    {name:"suraj",marks:"90"},
+    {name:"sravan",marks:"40"},
+    {name:"nandan",marks:"70"},
+    {name:"santhos",marks:"99"},
+    {name:"thoufiq",marks:"0"}
+]
+ function get(score) {
+  return score >= 90 ? 'A' :
+  score >= 80 ? 'B' :
+  score >= 70 ? 'C' :
+  score >= 60 ? 'D' : 'F';
+ }
+ students1.filter((ele1)=>{
+    let final=get(ele1.marks)
+    console.log(`${ele1.name}:${final}`)
+ })
+ 
 
 
 
@@ -84,19 +76,19 @@
 // })
 // console.log(arr5)
 
-// // ----------------------------------------------------Map,filter,reduce--------------------------------
-// // map:-The map function is used to create a new array by applying a given function to each element of the original array. It does not modify the original array.
-// // const numbe = [1, 2, 3, 4];
-// // const doubled = numbe.map(num => num * 2);
-// // console.log(doubled); 
-// // filter:-The filter function is used to create a new array containing only those elements that pass a given test (i.e., the function returns true).
-// // const numbe1 = [1, 2, 3, 4, 5];
-// // const evenNumbers = numbe1.filter(num => num % 2 === 0);
-// // console.log(evenNumbers); 
-// // reduce:-The reduce function is used to apply a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
-// // const numbers = [1, 2, 3, 4];
-// // const sum = numbers.reduce((acc, num) => acc + num, 0);
-// // console.log(sum); 
+// ----------------------------------------------------Map,filter,reduce--------------------------------
+// map:-The map function is used to create a new array by applying a given function to each element of the original array. It does not modify the original array.
+// const numbe = [1, 2, 3, 4];
+// const doubled = numbe.map(num => num * 2);
+// console.log(doubled); 
+// filter:-The filter function is used to create a new array containing only those elements that pass a given test (i.e., the function returns true).
+// const numbe1 = [1, 2, 3, 4, 5];
+// const evenNumbers = numbe1.filter(num => num % 2 === 0);
+// console.log(evenNumbers); 
+// reduce:-The reduce function is used to apply a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
+// const numbers = [1, 2, 3, 4];
+// const sum = numbers.reduce((acc, num) => acc + num, 0);
+// console.log(sum); 
 
 
 // // --------------------------------------------api fetch--------------------------------------
@@ -126,34 +118,3 @@
 //     }
 // }
 // console.log(person.contact?.phono)
-
-
-
-const getcheese=(Thoufiq)=>{
-    setTimeout(()=>{
-        let cheese="🧀"
-        Thoufiq(cheese)
-    },5000)
-}
-const dough=(cheese,Thoufiq)=>{
-    setTimeout(() => {
-        let dough=cheese+"🥟"
-        Thoufiq(dough)
-
-    }, 5000);
-}
-const pizza=(dough,Thoufiq)=>{ 
-    setTimeout(()=>{
-        let pizza=dough+"🍕"
-        Thoufiq(pizza)
-    },5000)
-}
-getcheese((cheese)=>{
-    console.log("Got the cheese",cheese)
-    dough(cheese,(dough)=>{
-        console.log("Got the dough",dough)
-        pizza(dough,(pizza)=>{
-            console.log("Pizza is ready",pizza)
-        })
-    })
-})
